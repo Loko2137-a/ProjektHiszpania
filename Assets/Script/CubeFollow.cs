@@ -1,18 +1,19 @@
 using UnityEngine;
-
 public class CubeFollow : MonoBehaviour
 {
     public Transform player;
     public float speed = 3;
-    public float distance = 2;
+    public float distance = 0;
+    void Start()
+    {
 
+    }
     void Update()
     {
-        float dist = Vector3.Distance(transform.position, player.position);
-        if (dist > distance)
+        if (Vector3.Distance(transform.position, player.transform.position) > distance)
         {
             transform.LookAt(player);
-            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.position += transform.forward * Time.deltaTime * speed;
         }
     }
 }

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnCube : MonoBehaviour
@@ -14,6 +15,7 @@ public class SpawnCube : MonoBehaviour
     {
         
     }
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Cube Spawner"))
