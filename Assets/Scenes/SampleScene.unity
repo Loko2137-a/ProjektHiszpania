@@ -1062,7 +1062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef2d8451fc2da046bd63c1942b5c207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnCube
-  cube: {fileID: 5839703589093698710, guid: f756c890c5e41a044b8eabe72e098229, type: 3}
+  cube: {fileID: 8659252067065907466, guid: b26f7121751ca1c489b0233cfde20a3a, type: 3}
+  player: {fileID: 571793403}
 --- !u!1 &1379894851
 GameObject:
   m_ObjectHideFlags: 0

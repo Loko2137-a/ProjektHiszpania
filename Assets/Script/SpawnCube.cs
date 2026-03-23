@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpawnCube : MonoBehaviour
 {
     public GameObject cube;
+    public Transform player;
     void Start()
     {
         
@@ -18,6 +19,7 @@ public class SpawnCube : MonoBehaviour
         if(other.CompareTag("Cube Spawner"))
         {
             Instantiate(cube, gameObject.transform.position, Quaternion.identity);
+            cube.GetComponent<CubeFollow>().player = player;
         }
     }
 }

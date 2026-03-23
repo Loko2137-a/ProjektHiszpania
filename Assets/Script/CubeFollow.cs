@@ -4,17 +4,15 @@ public class CubeFollow : MonoBehaviour
 {
     public Transform player;
     public float speed = 3;
-    public float distance = 0;
-    void Start()
-    {
+    public float distance = 2;
 
-    }
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) > distance)
+        float dist = Vector3.Distance(transform.position, player.position);
+        if (dist > distance)
         {
             transform.LookAt(player);
-            transform.position += transform.forward * Time.deltaTime * speed;
+            transform.position += transform.forward * speed * Time.deltaTime;
         }
     }
 }
