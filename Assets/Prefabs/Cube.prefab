@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 964341737468509909}
   - component: {fileID: 1899593014295435936}
   - component: {fileID: 3433533816050703847}
-  - component: {fileID: 1941990858481266177}
+  - component: {fileID: 3877721904968376072}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1941990858481266177
+--- !u!114 &3877721904968376072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,5 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeFollow
   player: {fileID: 0}
-  speed: 2
+  speed: 3
   distance: 0
