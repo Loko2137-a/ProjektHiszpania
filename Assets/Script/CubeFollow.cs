@@ -6,7 +6,7 @@ public class CubeFollow : MonoBehaviour
     public float distance = 0;
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
     void Update()
     {

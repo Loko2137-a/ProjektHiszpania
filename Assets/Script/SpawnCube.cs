@@ -7,7 +7,12 @@ public class SpawnCube : MonoBehaviour
     public Transform player;
     void Start()
     {
-        
+        if (player == null)
+        {
+            Debug.LogError("Player is not assigned!");
+            return;
+        }
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
