@@ -1,17 +1,31 @@
 using TMPro;
 using UnityEngine;
+
 public class CoinCounter : MonoBehaviour
 {
-    public int coinamount = 0;
-    public TextMeshProUGUI coincount;
+    public GameObject finalCoin;
+    public GameObject nextLevelObject;
+    public int coinAmount = 0;
+    public TextMeshProUGUI coinCount;
+    public TextMeshProUGUI endPanel;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Coin"))
         {
-            coinamount++;
+            coinAmount++;
             Destroy(other.gameObject);
-            coincount.text = "Coins: " + coinamount;
+            coinCount.text = "Coins: " + coinAmount;
+
+            if (coinAmount == 4 && finalCoin != null)
+            {
+                finalCoin.SetActive(true);
+            }
+        }
+
+        if (other.CompareTag("EndCoin") && nextLevelObject != null)
+        {
+            nextLevelObject.SetActive(true);
         }
     }
 }

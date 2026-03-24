@@ -8,6 +8,8 @@ TagManager:
   - Cube Spawner
   - Coin
   - DeathPart
+  - EndCoin
+  - NextLevel
   layers:
   - Default
   - TransparentFX
