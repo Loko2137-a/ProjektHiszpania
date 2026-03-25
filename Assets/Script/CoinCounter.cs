@@ -3,29 +3,42 @@ using UnityEngine;
 
 public class CoinCounter : MonoBehaviour
 {
-    public GameObject finalCoin;
+    public GameObject endCoin;
     public GameObject nextLevelObject;
-    public int coinAmount = 0;
     public TextMeshProUGUI coinCount;
-    public TextMeshProUGUI endPanel;
+
+    private int totalCoins;
+    private int collectedCoins = 0;
+
+    void Start()
+    {
+        totalCoins = GameObject.FindGameObjectsWithTag("Coin").Length;
+
+        if (endCoin != null)
+            endCoin.SetActive(false);
+
+        coinCount.text = "Coins: 0 / " + totalCoins;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Coin"))
         {
-            coinAmount++;
+            collectedCoins++;
             Destroy(other.gameObject);
-            coinCount.text = "Coins: " + coinAmount;
 
-            if (coinAmount == 4 && finalCoin != null)
+            coinCount.text = "Coins: " + collectedCoins + " / " + totalCoins;
+
+            if (collectedCoins >= totalCoins && endCoin != null)
             {
-                finalCoin.SetActive(true);
+                endCoin.SetActive(true);
             }
         }
 
-        if (other.CompareTag("EndCoin") && nextLevelObject != null)
+        if (other.CompareTag("EndCoin") && endCoin.activeSelf)
         {
-            nextLevelObject.SetActive(true);
+            if (nextLevelObject != null)
+                nextLevelObject.SetActive(true);
         }
     }
 }
