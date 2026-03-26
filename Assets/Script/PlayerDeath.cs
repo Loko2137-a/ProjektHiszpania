@@ -40,4 +40,8 @@ public class PlayerDeath : MonoBehaviour
             endPanel.SetActive(true);
         }
     }
+    public void toMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
